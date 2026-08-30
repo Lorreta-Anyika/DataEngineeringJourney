@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project presents a conceptual end-to-end data pipeline designed for **Beejan Technologies**, a telecommunications company seeking to consolidate customer complaint data from multiple channels.
+This project presents a conceptual end-to-end data pipeline designed for **Beejan Technologies**, a telecommunications company seeking to consolidate customer complaint data from multiple channels. For context, Beejan Technologies is an operator. 
 
 The pipeline brings together data from:
 
