@@ -1,50 +1,81 @@
-# Conceptual End-to-End Data Pipeline
+# Data Engineering Journey
 
-## Overview
+This repository documents my journey into **Data Engineering** through structured learning, hands-on exercises, technical challenges and practical projects.
 
-This project presents a conceptual end-to-end data pipeline designed for **Beejan Technologies**, a telecommunications company seeking to consolidate customer complaint data from multiple channels. For context, Beejan Technologies is an operator. 
+Rather than keeping my learning as scattered notes, I use this repository to document what I learn, the problems I solve, the architectural decisions I make and the projects I build.
 
-The pipeline brings together data from:
+## Repository Structure
 
-- Social media
-- Call centre logs
-- SMS
-- Website/App forms
+### 01 — Data Engineering Fundamentals
+Core concepts and architectural thinking behind modern data systems.
 
-The design addresses the differences in data format, ingestion frequency and business requirements across these sources, with the goal of providing both **near-real-time operational visibility and historical analytical capabilities**.
+Topics include:
+- Data pipelines
+- ETL & ELT
+- Batch vs Streaming
+- Data Lakes & Data Warehouses
+- OLTP & OLAP
+- Data ingestion
+- Data processing & transformation
+- Data modelling
+- DataOps
+- Data quality, reliability and monitoring
 
-## Architecture
+### 02 — Linux
+My Linux learning and command-line practice.
 
-The proposed architecture follows the flow:
+Topics include:
+- File and directory management
+- Permissions
+- Processes
+- Shell commands
+- Environment variables
+- Networking basics
+- Linux challenges and exercises
 
-**Data Sources → Ingestion → Processing & Transformation → Storage → Data Serving**
+### 03 — Git & GitHub
+Version control and collaborative development.
 
-with **Orchestration & Monitoring** and **DataOps** operating across the pipeline.
+Topics include:
+- Git fundamentals
+- Branching
+- Merging
+- Merge conflicts
+- Pull requests
+- GitHub workflows
 
-![Conceptual Pipeline Architecture](conceptual-pipeline.png)
+### 04 — SQL
+SQL practice and database querying.
 
-## Key Design Considerations
+Topics include:
+- SELECT and filtering
+- Aggregations
+- GROUP BY and HAVING
+- JOINs
+- Subqueries
+- CTEs
+- Window functions
+- Data cleaning with SQL
+- SQL challenges
 
-The design explores:
+## Learning Approach
 
-- Streaming, micro-batch and batch ingestion
-- Push and pull ingestion patterns
-- Incremental ingestion and historical backfill
-- Lambda architecture for streaming and batch processing
-- ELT and raw-data preservation
-- Data cleaning, validation, classification and sentiment analysis
-- Schema-on-read and Parquet-based curated storage
-- Data Lake and Data Warehouse separation
-- OLTP and OLAP workloads
-- Dashboards, alerts, APIs and analytical access
-- Pipeline monitoring, data quality and freshness
-- DataOps practices including testing, rollback, fault recovery and scaling
+My approach is:
 
-## Deliverables
+**Learn → Build → Document → Reflect**
 
-- `conceptual-pipeline.png` — Conceptual architecture diagram
-- `design-explanation.pdf` — Two-page design explanation covering the design choices, assumptions, thought process, and known challenges.
+For each major topic or project, I aim to document:
 
-## Context
+- What I learned
+- Why a particular approach was chosen
+- What problem it solves
+- What I implemented
+- Challenges encountered
+- Lessons learned
+- What I would improve
 
-The architectural decisions are informed by my exposure to the telecommunications environment, particularly the relationship between network incidents, customer experience and operational data. Relevant telecommunications use cases and publicly available technical references were also used to inform assumptions where requirements were not explicitly provided.
+## Goal
+
+The goal of this repository is to build a strong foundation in **Data Engineering** while creating a public record of my progression from concepts to practical implementation.
+
+> **Learning the concepts. Building the systems. Documenting the journey.**
