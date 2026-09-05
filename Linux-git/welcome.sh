@@ -36,6 +36,13 @@ readonly LOG_DIR="/var/logs/data"
 #now, the path for LOG_DIR cannot be overwritten. It remains constant. This is Useful when i dont want anybody on the team to ever change a path.
 LOG_DIR="tmp/logs" #This will cause an error
 
+
+#CONDITIONAL STATEMENTS
+
+if [ -f "data/raw/sales.csv" ]
+then
+	echo "File exists. Proceeding with processing..."
+fi 
 chmod +x welcome.sh
 
 
