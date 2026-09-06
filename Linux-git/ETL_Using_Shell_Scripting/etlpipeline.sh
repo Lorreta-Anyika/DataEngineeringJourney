@@ -11,7 +11,8 @@
 echo "Extracting Data"
 
 #Source URL
-readonly raw_data_url="https://www.stats.govt.nz/assets/Uploads/Annual-enterprise-survey/Annual-enterprise-survey-2023-financial-year-provisional/Download-data/annual-enterprise-survey-2023-financial-year-provisional.csv"
+Export raw_data_url="https://www.stats.govt.nz/assets/Uploads/Annual-enterprise-survey/Annual-enterprise-survey-2023-financial-year-provisional/Download-data/annual-enterprise-survey-2023-financial-year-provisional.csv"
+readonly raw_data_url
 
 #Destination 
 raw="./raw"
@@ -76,3 +77,22 @@ NR == 1 {
 
 echo "Transformation is completed."
 echo "Selected columns saved to: $OUTPUT_FILE"
+
+
+#LOADING
+
+#create the directory to dump the file
+Gold="./Gold"
+mkdir -p "Gold"
+
+#copy the file 
+cp "$Transformed/2023_year_finance.csv" "$Gold/"
+
+#conditions to ensure file is copied
+if [ -f "$Gold/2023_year_finance.csv" ]
+then
+	echo "loading completed successfully"
+	echo "file saved to:  $Gold"
+else
+	echo "Loading failed. File was not saved to $Gold. Try again"
+fi
