@@ -36,3 +36,10 @@ practice examples
 
 
 
+
+Command	Description
+crontab -e	Edit crontab file (opens in default editor).
+crontab -l	List all cron jobs in crontab.
+crontab -r	Deletes entire crontab (to be used with caution!).
+crontab -i	Prompt for confirmation before deleting (-r -i).
+sudo crontab -e	Edit the root user’s crontab (run jobs with root privileges).
