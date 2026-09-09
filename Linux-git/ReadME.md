@@ -16,6 +16,7 @@ Lastly, I wrote a separate Bash script for moving CSV and JSON files.
 - Git was used to version and document my work throughout the whole process.
 
 ---
+![Bash ETL Pipeline](images/etl_pipeline.png)
 ## 2. How to Run
 To replicate this project, clone the repository:
 
