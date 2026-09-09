@@ -71,16 +71,23 @@ This preserves the original source data and makes the movement of data through t
 
 ## 4. Challenges and Lessons Learned
 
-This project was not a straightforward process for me. I encountered several issues while trying to get the pipeline to work correctly, and debugging them became an important part of the learning process.
+This project was not a straightforward process for me. I encountered several issues while building the pipeline and configuring the scheduling, and debugging these problems became an important part of the learning process.
 
-One of my first mistakes was adding spaces around `=` when assigning Bash variables. This caused Bash to interpret the assignment incorrectly. Fixing this helped me understand how strict Bash syntax can be.
+One of the challenges was working on a Windows environment. Since Cron is a Linux-based job scheduler, I initially tried to run the Cron configuration directly from Git Bash on Windows. However, `crontab` is not natively available in the Git Bash environment.
 
-I also initially tried to configure the Cron job from Git Bash on Windows. Since `crontab` was not available in my environment, I had to move the scheduling setup to my Contabo Linux server.
+One common recommendation I found was to install Windows Subsystem for Linux (WSL). However, I decided not to go that route because I did not want to introduce another Linux environment that would consume additional disk space on my machine.
+
+Instead, I applied my previous knowledge of Docker. Since I already had Docker Desktop installed, I used an Ubuntu container as a lightweight Linux environment for testing the Cron job. I mounted my project directory into the container, installed Cron, configured the scheduled task, and verified that the Cron daemon was actually executing my ETL script.
+
+This experience reinforced something I have been learning throughout my data engineering journey: when a tool does not work in your current environment, understanding the underlying requirement can help you find another practical solution.
+
+Another early mistake I made was adding spaces around `=` when assigning Bash variables. Bash does not allow spaces around the assignment operator, and this caused the assignment to be interpreted incorrectly. Fixing this helped me understand how strict Bash syntax can be.
+
+I also encountered issues when testing the Cron job. The Cron daemon was running and successfully executing my script, but the execution revealed additional problems in the ETL pipeline, including a case-sensitive `Export` command and the absence of `curl` in the minimal Ubuntu container. This was useful because the scheduled execution exposed problems that were not immediately obvious when looking at the script itself.
 
 The biggest challenge I am still working through is the CSV transformation using `awk`.
 
-I initially used:
-
+I had initially used :
 ```bash
 awk -F"," ...
 ```
