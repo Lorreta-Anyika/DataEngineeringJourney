@@ -9,31 +9,31 @@ rows = [
     {"id": 4, "email": "d@x.com", "amount": 1500},
 ]
 
-# quality_data = []
-# messy_data = []
+quality_data = []
+messy_data = []
 
-# for r in rows:
-#     if r["email"] == "" or r["amount"] < 0:
-#         messy_data.append(r)
-#         continue
-#     quality_data.append(r)
+for r in rows:
+    if r["email"] == "" or r["amount"] < 0:
+        messy_data.append(r)
+        continue
+    quality_data.append(r)
 
-# print(f"rows in quality data: {len(quality_data)} \n rows in messy data: {len(messy_data)}")
+print(f"rows in quality data: {len(quality_data)} \n rows in messy data: {len(messy_data)}")
 
 
 
-#DE Task 5. Same rows. This time the business says a single bad row must abort the whole load. Rewrite it with break so nothing is loaded once a bad row appears."""
+#DE Task 2. Same rows. This time the business says a single bad row must abort the whole load. Rewrite it with break so nothing is loaded once a bad row appears."""
 
-# quality_data = []
-# messy_data = []
+quality_data = []
+messy_data = []
 
-# for r in rows:
-#     if r["email"] == "" or r["amount"] < 0:
-#         messy_data.append(r)
-#         break
-#     quality_data.append(r)
+for r in rows:
+    if r["email"] == "" or r["amount"] < 0:
+        messy_data.append(r)
+        break
+    quality_data.append(r)
 
-# print(f"rows in quality data: {len(quality_data)} \n rows in messy data: {len(messy_data)}")
+print(f"rows in quality data: {len(quality_data)} \n rows in messy data: {len(messy_data)}")
 
 raw_transactions = [
     {"id": 1, "user": "ahmed",  "amount": 5000,  "currency": "NGN", "status": "success"},
@@ -152,7 +152,7 @@ print(f"ID: {biggest['id']}")
 print(f"User: {biggest['user']}")
 print(f"Amount: {biggest['amount']}\n")
 
-#Task 3:
+# #Task 3:
 """Reject any row whose status is not one of {"success", "failed", "pending"}."""
 valid_statuses = {"success", "failed", "pending"}
 
@@ -181,3 +181,72 @@ for user, amount in user_spend.items():
     if user == "":
         user = "unknown"
     print(f"{user}: {amount}")
+
+#Task 4. Write square(n) that returns n multiplied by itself. Print the result of square(7).
+def square(n):
+    return n *n
+
+print(square(4))
+
+#Task 5. Write is_even(n) that returns True or False. Use it inside a loop over [1, 2, 3, 4, 5, 6] to print only the even numbers.
+def is_even(n):
+    return n % 2 == 0
+
+print(is_even(7))
+numbers = [1,2,3,5,4,6,7]
+for n in numbers:
+    if is_even(n):
+        print(n)
+
+#Task 6. Write greet(name, greeting="Hello") that returns the greeting string instead of printing it. Call it twice, once with the default and once with "Sannu".
+def greet(name, greeting="Hello"):
+    return f"{greeting}, {name}!"
+
+print(greet("Lorreta"))
+print(greet("Lorreta", "Sannu"))
+
+#Task 7. Write longest_word(words) that takes a list of words and returns the longest one. Test it with ["python", "sql", "airflow", "dbt"].
+def longest_word(words):
+    longest = ""
+    for word in words:
+        if len(word) > len(longest):
+            longest = word
+    return longest
+
+print(longest_word(["python", "sql", "airflow", "dbt"]))
+
+#Task 8. Write stats(numbers) that returns three things: the count, the total and the average. Unpack them into three variables and print each.
+def stats(numbers):
+    count = len(numbers)
+    total = sum(numbers)
+    av= total/count
+    return count, total, av
+#f"count: {count}, \n Sum: {total}, \n average: {av}"
+
+count, total, av = stats([3,4,5,6,87,9,0,1,2,3,4,5,6,7,8,9])
+print(f"count: {count}")
+print(f"total: {total}")
+print(f"average: {av}")
+
+
+#Task 9. Write shout(*words) that accepts any number of words and returns them joined with spaces, in capitals. shout("data", "is", "power") should return "DATA IS POWER"
+#. (Hint: " ".join(list_of_strings))"""
+
+def shout(*words):
+    return " ".join(words).upper()
+
+print(shout("Uche", "is", "a", "data", "engineer"))
+
+#DE Task 10. Write is_valid_email(email) that returns True only if the
+#  string contains "@" and a "." after the @. Test it on ["a@x.com", "bad-email", "no@dotcom", ""].
+
+def is_valid_email(email):
+    at_position = email.find("@")
+    dot_position = email.find(".", at_position) #searches the position of dot immediately after the position of the @
+
+    if at_position == -1 or dot_position == -1:
+        return False
+    return True
+emails = ["a@x.com", "bad-email", "no@dotcom", ""]
+for email in emails:
+    print(f"{email}: {is_valid_email(email)}")
