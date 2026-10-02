@@ -244,8 +244,7 @@ def is_valid_email(email):
     at_position = email.find("@")
     dot_position = email.find(".", at_position) #searches the position of dot immediately after the position of the @
 
-    if at_position == -1 or dot_position == -1:
-        return False
+    if at_position == -1 or dot_position == -1: #.find() returns -1 if it cannot find what we requested
     return True
 emails = ["a@x.com", "bad-email", "no@dotcom", ""]
 for email in emails:
