@@ -1,0 +1,12 @@
+order_id,order_date,customer_name,product,quantity,price,region
+1001,2026-08-01,John Smith,Pizza,1,900,
+1002,2026-08-01,Sarah Johnson,Burger,2,50,East
+1003,2026-08-02,Michael Brown,Jollof Rice,1,200,West
+1004,2026-08-02,Emily Davis,Fries,3,25,North
+1005,2026-08-03,Daniel Wilson,Chicken,2,45,South
+1006,2026-08-03,Linda Martinez,Coconot Rice,1,150,East
+1007,2026-08-04,James Anderson,Salad,5,10,West
+1008,2026-08-04,Patricia Thomas,Noodles,1,120,North
+1009,2026-08-05,Robert Jackson,Pizza,2,850,South
+1010,2026-08-05,Mary White,Jollof Rice,1,210,East
+1010,2026-08-05,Mary White,Jollof Rice,1,210,East
