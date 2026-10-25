@@ -1,0 +1,5 @@
+FROM apache/airflow:3.3.2
+
+RUN pip install \
+    apache-airflow-providers-microsoft-mssql \
+    pymssql
